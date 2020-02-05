@@ -1,6 +1,4 @@
-@GrabConfig(systemClassLoader=true)
-@Grab(group='org.apache.derby', module='derbyclient', version='10.14.2.0')
-import groovy.sql.*
+def dbScript
 
 
 node {
@@ -13,13 +11,8 @@ node {
             sh "mvn clean install"
       }
        stage('DBCheck') {
-
-
-                def  driver = "org.apache.derby.jdbc.ClientDriver"
-
-                def sql = Sql.newInstance("jdbc:derby://35.234.114.2:1527/WM","WM","WM",driver)
-
-                 sql.close()
+                dbScript = load 'DBCheck.groovy'
+                dbScript.check()
             }
        stage('Deploy') {
                   // Run Maven deploy.
