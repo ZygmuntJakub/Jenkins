@@ -1,3 +1,4 @@
+import groovy.sql.*
 pipeline {
    agent any
    stages {
@@ -14,8 +15,6 @@ pipeline {
          stage('DBCheck') {
                steps {
                 script {
-                    import groovy.sql.*
-
                     String driver = "org.apache.derby.jdbc.EmbeddedDriver"
                     def sql = Sql.newInstance("jdbc:derby://35.234.114.2:1527/WM","WM","WM",driver)
 
