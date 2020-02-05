@@ -1,4 +1,6 @@
 import groovy.sql.*
+import java.sql.*
+
 node {
 
       stage('Build') {
