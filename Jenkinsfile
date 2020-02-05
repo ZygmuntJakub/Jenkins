@@ -11,8 +11,7 @@ node {
             sh "mvn clean install"
       }
        stage('DBCheck') {
-                dbScript = load 'DBCheck.groovy'
-                dbScript.check()
+                // toDo
             }
        stage('Deploy') {
                   // Run Maven deploy.
