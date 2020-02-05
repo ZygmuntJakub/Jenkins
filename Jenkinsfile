@@ -9,7 +9,7 @@ node {
             sh "mvn clean install"
       }
        stage('DBCheck') {
-                String driver = "org.apache.derby.jdbc.EmbeddedDriver"
+                String driver = "org.apache.derby.jdbc.ClientDriver"
                 def sql = Sql.newInstance("jdbc:derby://35.234.114.2:1527/WM","WM","WM",driver)
 
                  sql.close()
