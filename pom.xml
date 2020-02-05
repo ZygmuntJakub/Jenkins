@@ -69,7 +69,6 @@
                             <cargo.remote.password>${payara.password}</cargo.remote.password>
                             <cargo.glassfish.admin.port>${payara.adminPort}</cargo.glassfish.admin.port>
                             <cargo.hostname>${payara.hostname}</cargo.hostname>
-                            <cargo.glassfish.removeDefaultDatasource>false</cargo.glassfish.removeDefaultDatasource>
                             <cargo.servlet.port>8080</cargo.servlet.port>
                         </properties>
                     </configuration>
