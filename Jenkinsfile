@@ -1,6 +1,7 @@
 pipeline {
    agent any
    stages {
+
       stage('Build') {
          steps {
             // Get some code from a GitHub repository
@@ -10,6 +11,19 @@ pipeline {
             sh "mvn clean install"
          }
       }
+         stage('DBCheck') {
+               steps {
+                script {
+                    import groovy.sql.*
+
+                    String driver = "org.apache.derby.jdbc.EmbeddedDriver"
+                    def sql = Sql.newInstance("jdbc:derby://35.234.114.2:1527/WM","WM","WM",driver)
+
+                    sql.close()
+                }
+
+               }
+            }
             stage('Deploy') {
                steps {
 
