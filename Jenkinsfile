@@ -2,6 +2,7 @@
 @GrabConfig(systemClassLoader=true)
 
 import groovy.sql.*
+import java.sql.*
 
 
 node {
@@ -14,6 +15,8 @@ node {
             sh "mvn clean install"
       }
        stage('DBCheck') {
+
+                Class.forName("org.apache.derby.jdbc.ClientDriver");
 
                 def  driver = "org.apache.derby.jdbc.ClientDriver"
                 def sql = Sql.newInstance("jdbc:derby://35.234.114.2:1527/WM","WM","WM",driver)
