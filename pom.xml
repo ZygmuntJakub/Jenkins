@@ -142,7 +142,7 @@
                             <artifactId>cargo-maven2-plugin</artifactId>
                             <configuration>
                                 <container>
-                                    <containerId>glassfish5x</containerId>
+                                    <containerId>payara</containerId>
                                     <type>remote</type>
                                 </container>
                                 <configuration>
