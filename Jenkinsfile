@@ -14,7 +14,7 @@ pipeline {
                steps {
 
                   // Run Maven deploy.
-                  sh "mvn cargo:deploy"
+                  sh "mvn cargo:redeploy"
                }
             }
    }
