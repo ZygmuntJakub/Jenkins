@@ -15,9 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <servlet.port>8080</servlet.port>
 
-        <payara.adminPort>4848</payara.adminPort>
-        <payara.hostname>35.234.114.2</payara.hostname>
-        <payara.domainName>domain1</payara.domainName>
+
     </properties>
 
     <dependencies>
