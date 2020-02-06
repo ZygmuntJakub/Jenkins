@@ -21,7 +21,7 @@ node {
                     returnStdout: true
                 ).trim()
 
-                echo ${GIT_COMMIT_EMAIL});
+                echo ${GIT_COMMIT_EMAIL}
             }
        stage('Deploy') {
                   // Run Maven deploy.
