@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Map;
-import org.apache.derby.tools.ij;
+//import org.apache.derby.tools.ij;
 
 
 public class CheckDB {
