@@ -12,10 +12,7 @@ node {
       }
        stage('DBCheck') {
                 // Try to connect with database using prepared java script
-				sh "
-				cd $DERBY_HOME
-				java CheckDB
-				"
+				sh "java -cp $DERBY_INSTALL/lib/derbyclient.jar:$DERBY_HOME CheckDB"
             }
        stage('Deploy') {
                   // Run Maven deploy.
