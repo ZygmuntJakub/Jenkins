@@ -1,7 +1,7 @@
-  GNU nano 2.3.1                               File: CheckDB.java                                                                      
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
 public class CheckDB {
     public static void main(String[] args) throws SQLException {
         String dbURL = "jdbc:derby://10.156.0.3:1527/WM";
