@@ -13,7 +13,8 @@ node {
        stage('DBCheck') {
                 // Try to connect with database using prepared java script
 
-				 sh "java -cp /opt/Apache/db-derby-10.14.2.0-bin/lib/derbyclient.jar:/opt/Apache CheckDB"
+				 sh "javac ./pielineScripts/CheckDB.java"
+				 sh "java -cp /opt/Apache/db-derby-10.14.2.0-bin/lib/derbyclient.jar:./pielineScripts"
 				
             }
        stage('Deploy') {
