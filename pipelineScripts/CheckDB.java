@@ -3,6 +3,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Map;
 
+import org.apache.derby.jdbc.*;
+
 public class CheckDB {
     public static void main(String[] args) throws SQLException {
         String dbURL = "jdbc:derby://10.156.0.3:1527/WM";
@@ -20,7 +22,7 @@ public class CheckDB {
         System.out.println("Trying to access DB...");
 
         DriverManager.registerDriver(new org.apache.derby.jdbc.ClientDriver());
-        
+
         try(Connection conn = DriverManager.getConnection(dbURL, user, password)){
             System.out.println("Success");
         } catch (SQLException e) {
