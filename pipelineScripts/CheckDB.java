@@ -20,12 +20,15 @@ public class CheckDB {
 
         try(Connection conn = DriverManager.getConnection(dbURL, user, password)){
             System.out.println("Success");
-        } catch (SQLException e) {
+        }
+        /*
+        catch (SQLException e) {
             System.out.println("Could not access DB. Attempting to create one...");
             try(Connection conn = DriverManager.getConnection(dbCreateURL, user, password)){
                 System.out.println("New DB created successfully");
             }
 
         }
+        */
     }
 }
