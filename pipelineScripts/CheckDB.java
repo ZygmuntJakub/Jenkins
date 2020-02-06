@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Map;
 
 public class CheckDB {
     public static void main(String[] args) throws SQLException {
@@ -13,7 +14,7 @@ public class CheckDB {
         for (Map.Entry<String, String> entry : env.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
-        
+
         System.out.println("Trying to access DB...");
         try(Connection conn = DriverManager.getConnection(dbURL, user, password)){
             System.out.println("Success");
