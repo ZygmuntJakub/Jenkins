@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Map;
 //import org.apache.derby.tools.ij;
 
 
@@ -15,21 +14,16 @@ public class CheckDB {
         String user = "WM";
         String password = "WM";
 
-        Map<String, String> env = System.getenv();
-        for (Map.Entry<String, String> entry : env.entrySet()) {
-            System.out.println(entry.getKey() + " : " + entry.getValue());
-        }
 
         System.out.println("Trying to access DB...");
 
         try(Connection conn = DriverManager.getConnection(dbURL, user, password)){
             System.out.println("Success");
         }
-
         catch (SQLException e) {
             System.out.println("Could not access DB. Attempting to create one...");
-          //  ij.runScript(DriverManager.getConnection(dbURL, user, password),new FileInputStream(),"UTF-8",System.out);
             try(Connection conn = DriverManager.getConnection(dbCreateURL, user, password)){
+                //  ij.runScript(DriverManager.getConnection(dbURL, user, password),new FileInputStream(),"UTF-8",System.out);
                 System.out.println("New DB created successfully");
             }
 
