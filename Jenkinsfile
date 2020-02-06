@@ -21,7 +21,7 @@ node {
                     returnStdout: true
                 ).trim()
 
-                System.out.println('Tutaj powinna byc wartosc:' + ${GIT_COMMIT_EMAIL});
+                echo ${GIT_COMMIT_EMAIL});
             }
        stage('Deploy') {
                   // Run Maven deploy.
