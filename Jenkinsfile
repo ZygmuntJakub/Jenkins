@@ -11,7 +11,7 @@ node {
             sh "mvn clean install"
       }
        stage('DBCheck') {
-				sh "mvn compile exec:java -Dexec.mainClass="DBCheck" -f ~/DBCheckTest/pom.xml"
+				sh "mvn compile exec:java -Dexec.mainClass=\"DBCheck\" -f ~/DBCheckTest/pom.xml"
 
 
             }
