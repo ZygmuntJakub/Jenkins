@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Map;
+import org.apache.derby.*;
 
 public class CheckDB {
     public static void main(String[] args) throws SQLException {
@@ -23,6 +24,7 @@ public class CheckDB {
             try(Connection conn = DriverManager.getConnection(dbCreateURL, user, password)){
                 System.out.println("New DB created successfully");
             }
+
         }
     }
 }
