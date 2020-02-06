@@ -16,7 +16,7 @@ node {
 				// sh "java -cp /opt/Apache/db-derby-10.14.2.0-bin/lib/derbyclient.jar:/opt/Apache CheckDB"
 				
 				sh 'export CLASSPATH=/opt/Apache/db-derby-10.14.2.0-bin/lib/derbyclient.jar:.'
-				sh 'printenv'
+				println System.getProperty("java.ext.dirs")
 				
 				dbScript = load 'DBCheck.groovy'
                 dbScript.check()
