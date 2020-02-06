@@ -1,3 +1,5 @@
+DROP SCHEMA WM;
+CREATE SCHEMA WM;
 drop table ISSUE;
 drop table STOCK;
 drop table CONTRACTOR;
