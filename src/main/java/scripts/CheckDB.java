@@ -1,7 +1,11 @@
+package scripts;
+
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Map;
+import org.apache.derby.tools.ij;
 
 
 public class CheckDB {
@@ -21,14 +25,15 @@ public class CheckDB {
         try(Connection conn = DriverManager.getConnection(dbURL, user, password)){
             System.out.println("Success");
         }
-        /*
+
         catch (SQLException e) {
             System.out.println("Could not access DB. Attempting to create one...");
+            ij.runScript(DriverManager.getConnection(dbURL, user, password),new FileInputStream(),"UTF-8",System.out);
             try(Connection conn = DriverManager.getConnection(dbCreateURL, user, password)){
                 System.out.println("New DB created successfully");
             }
 
         }
-        */
+
     }
 }
