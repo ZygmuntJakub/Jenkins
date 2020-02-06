@@ -12,14 +12,9 @@ node {
       }
        stage('DBCheck') {
                 // Try to connect with database using prepared java script
-				// sh 'printenv'
-				// sh "java -cp /opt/Apache/db-derby-10.14.2.0-bin/lib/derbyclient.jar:/opt/Apache CheckDB"
+
+				 sh "java -cp /opt/Apache/db-derby-10.14.2.0-bin/lib/derbyclient.jar:/opt/Apache CheckDB"
 				
-				sh 'export CLASSPATH=/opt/Apache/db-derby-10.14.2.0-bin/lib/derbyclient.jar:.'
-				println System.getProperty("java.ext.dirs")
-				
-				dbScript = load 'DBCheck.groovy'
-                dbScript.check()
             }
        stage('Deploy') {
                   // Run Maven deploy.
