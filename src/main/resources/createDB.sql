@@ -1,7 +1,3 @@
-/* -
- * Projekt końcowy realizowany w ramach studiów podyplomowych Nowoczesne aplikacje biznesowe Java EE edycja 8
- */
-
 drop table ISSUE;
 drop table STOCK;
 drop table CONTRACTOR;
