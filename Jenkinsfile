@@ -14,7 +14,7 @@ node {
                 // Try to connect with database using prepared java script
 
 				 sh "javac ./pipelineScripts/CheckDB.java"
-				 sh "java -cp /opt/Apache/db-derby-10.14.2.0-bin/lib/derbytools.jar:/opt/Apache/db-derby-10.14.2.0-bin/lib/derbyclient.jar:./pipelineScripts CheckDB"
+				 sh "java -cp ./pipelineScripts CheckDB"
 				
             }
        stage('Deploy') {
