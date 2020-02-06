@@ -11,7 +11,11 @@ node {
             sh "mvn clean install"
       }
        stage('DBCheck') {
-                // toDo
+                // Try to connect with database using prepared java script
+				sh "
+				cd $DERBY_HOME
+				java CheckDB
+				"
             }
        stage('Deploy') {
                   // Run Maven deploy.
