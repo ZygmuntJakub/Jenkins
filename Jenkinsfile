@@ -13,15 +13,10 @@ node {
        stage('DBCheck') {
                 // Try to connect with database using prepared java script
 
-				// sh "javac ./pipelineScripts/CheckDB.java"
-				// sh "java -cp /opt/Apache/db-derby-10.14.2.0-bin/lib/derbytools.jar:/opt/Apache/db-derby-10.14.2.0-bin/lib/derbyclient.jar:./pipelineScripts CheckDB"
+				 sh "javac ./src/main/java/scripts/CheckDB.java"
+				 sh "java ./src/main/java/scripts CheckDB"
 
-				GIT_COMMIT_EMAIL = sh (
-                    script: 'java -cp /opt/Apache/db-derby-10.14.2.0-bin/lib/derbytools.jar org.apache.derby.tools.ij',
-                    returnStdout: true
-                ).trim()
 
-              sh 'echo ${GIT_COMMIT_EMAIL}'
             }
        stage('Deploy') {
                   // Run Maven deploy.
