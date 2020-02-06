@@ -28,7 +28,7 @@ public class CheckDB {
 
         catch (SQLException e) {
             System.out.println("Could not access DB. Attempting to create one...");
-            ij.runScript(DriverManager.getConnection(dbURL, user, password),new FileInputStream(),"UTF-8",System.out);
+          //  ij.runScript(DriverManager.getConnection(dbURL, user, password),new FileInputStream(),"UTF-8",System.out);
             try(Connection conn = DriverManager.getConnection(dbCreateURL, user, password)){
                 System.out.println("New DB created successfully");
             }
