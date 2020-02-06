@@ -1,4 +1,4 @@
-DROP SCHEMA WM;
+DROP SCHEMA WM restrict;
 CREATE SCHEMA WM;
 drop table ISSUE;
 drop table STOCK;
