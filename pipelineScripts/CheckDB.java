@@ -10,12 +10,17 @@ public class CheckDB {
         String user = "WM";
         String password = "WM";
 
+
+
         Map<String, String> env = System.getenv();
         for (Map.Entry<String, String> entry : env.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
 
         System.out.println("Trying to access DB...");
+
+        DriverManager.registerDriver(new org.apache.derby.jdbc.ClientDriver());
+        
         try(Connection conn = DriverManager.getConnection(dbURL, user, password)){
             System.out.println("Success");
         } catch (SQLException e) {
