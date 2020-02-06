@@ -16,12 +16,8 @@
         <servlet.port>8080</servlet.port>
 
         <payara.adminPort>4848</payara.adminPort>
-        <payara.username>admin</payara.username>
-        <payara.password>Qwerty123</payara.password>
         <payara.hostname>35.234.114.2</payara.hostname>
         <payara.domainName>domain1</payara.domainName>
-<!--        <payara.home></payara.home>-->
-<!--        <payara.domainDir>${payara.home}/glassfish/domains</payara.domainDir>-->
     </properties>
 
     <dependencies>
@@ -162,7 +158,6 @@
                                         <cargo.remote.password>${payara.password}</cargo.remote.password>
                                         <cargo.glassfish.admin.port>${payara.adminPort}</cargo.glassfish.admin.port>
                                         <cargo.hostname>${payara.hostname}</cargo.hostname>
-                                        <cargo.servlet.port>${servlet.port}</cargo.servlet.port>
                                     </properties>
                                 </configuration>
                             </configuration>
