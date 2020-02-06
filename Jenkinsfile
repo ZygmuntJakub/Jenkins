@@ -15,7 +15,8 @@ node {
 				// sh 'printenv'
 				// sh "java -cp /opt/Apache/db-derby-10.14.2.0-bin/lib/derbyclient.jar:/opt/Apache CheckDB"
 				
-				this.getClass().classLoader.rootLoader.addURL(new File("/opt/Apache/db-derby-10.14.2.0-bin/lib/derbyclient.jar").toURL())
+				sh 'export CLASSPATH=$DERBY_INSTALL/lib/derbytools.jar:$DERBY_INSTALL/lib/derbyclient.jar:$DERBY_INSTALL\lib\derbynet.jar:.'
+				sh 'printenv'
 				
 				dbScript = load 'DBCheck.groovy'
                 dbScript.check()
