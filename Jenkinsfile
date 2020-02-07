@@ -16,6 +16,11 @@ pipeline {
                     sh "mvn compile exec:java -Dexec.mainClass=\"DBCheck\" -f ~/DBCheckTest/pom.xml"
                 }
             }
+            stage('Tests'){
+                steps{
+                    sh "mvn clean test -f ~/selenium/pom.xml"
+               }
+            }
             stage('Deploy') {
                 steps {
                     sh "mvn cargo:redeploy"
