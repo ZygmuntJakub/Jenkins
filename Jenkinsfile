@@ -21,9 +21,14 @@ pipeline {
                     sh "mvn clean test -f ~/selenium/pom.xml"
                }
             }
-            stage('Deploy') {
+            stage('Deploy'){
                 steps {
                     sh "mvn cargo:redeploy"
+                }
+            }
+            stage('Tests'){
+                steps{
+                    sh "mvn clean test -f ~/selenium/pom.xml"
                 }
             }
         }
